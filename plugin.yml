@@ -1,0 +1,13 @@
+name: ToolbarSwapper
+author: Lede
+website: https://github.com/Youtube-Lede
+main: me.lede.toolbarswapper.ToolbarSwapper
+version: 1.0.0
+api-version: 1.13
+
+permissions:
+  toolbarswapper.use:
+    default: op
+    description: allow to use toolbar swapper
+
+  
