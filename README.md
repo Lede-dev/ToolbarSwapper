@@ -60,6 +60,12 @@ Called when scrolling up the toolbar.
 Called when scrolling down the toolbar.
 ```
 
+### ToolbarSwapEvent (1.0.1)
+```
+툴바를 스왑할 때 호출됩니다.
+Called when the toolbar is swapped.
+```
+
 ***
 
 # Support
