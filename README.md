@@ -20,8 +20,8 @@ Spigot/Paper : 1.17, 1.16 (> 1.13)
 ```
 
 ***
-
 # How to use
+![toolbar_swapper_test_img](https://user-images.githubusercontent.com/68679956/122153956-ef4eb700-ce9e-11eb-90a9-cc5fc8ad6da8.gif)
 ```
 쉬프트 키를 누른 상태에서 마우스의 스크롤을 이용하여 툴바를 변경해보세요!
 Press the shift key and use the mouse's scroll to change the toolbar!
