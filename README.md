@@ -1,6 +1,6 @@
 ***
 
-# Author Information
+# Information
 
 #### Author : Lede  
 #### Youtube : https://www.youtube.com/channel/UCgwJYHQsbW_cPWfOFXo0XXQ  
