@@ -47,7 +47,7 @@ Called when scrolling through the toolbar.
 ```
 
 
-### TollbarScrollUpEvent
+### ToolbarScrollUpEvent
 ```
 툴바를 위로 스크롤할 때 호출됩니다.
 Called when scrolling up the toolbar.
