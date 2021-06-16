@@ -1,8 +1,12 @@
+***
+
 # Author Information
 
 Author : Lede  
 Youtube : https://www.youtube.com/channel/UCgwJYHQsbW_cPWfOFXo0XXQ  
 Blog : https://lede-archive.tistory.com/  
+
+***
 
 # Version
 #### Native Version
@@ -15,11 +19,15 @@ Spigot 1.17
 Spigot/Paper : 1.17, 1.16 (> 1.13)
 ```
 
+***
+
 # How to use
 ```
 쉬프트 키를 누른 상태에서 마우스의 스크롤을 이용하여 툴바를 변경해보세요!
 Press the shift key and use the mouse's scroll to change the toolbar!
 ```
+
+***
 
 # Permissions
 #### toolbarswapper.use
@@ -27,6 +35,8 @@ Press the shift key and use the mouse's scroll to change the toolbar!
 Toolbar Swapper 를 사용할 수 있는 권한을 지급합니다.
 Grants permission to use the Toolbar Swapper.
 ```
+
+***
 
 # Events
 
@@ -50,12 +60,16 @@ Called when scrolling up the toolbar.
 Called when scrolling down the toolbar.
 ```
 
+***
+
 # Support
 
 #### Buy me a coffee
 ```
 https://www.buymeacoffee.com/Lede
 ```
+
+***
 
 # Etc.
 ```
