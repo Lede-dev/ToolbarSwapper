@@ -9,6 +9,7 @@ import org.bukkit.event.player.PlayerItemHeldEvent;
 
 import me.lede.toolbarswapper.event.ToolbarScrollDownEvent;
 import me.lede.toolbarswapper.event.ToolbarScrollUpEvent;
+import me.lede.toolbarswapper.event.ToolbarSwapEvent;
 
 public class ToolbarSwapListener implements Listener {
 	
@@ -66,8 +67,12 @@ public class ToolbarSwapListener implements Listener {
 		Player player = event.getPlayer();
 		if (player.isSneaking()) {
 			if (player.hasPermission(PERMISSION_USE)) {
-				InventorySwapper.pushItemsUp(player);
-				playScrollSound(player);
+				ToolbarSwapEvent swapEvent = new ToolbarSwapEvent(player);
+				Bukkit.getPluginManager().callEvent(swapEvent);
+				if (!swapEvent.isCancelled()) {
+					InventorySwapper.pushItemsUp(player);
+					playScrollSound(player);
+				}				
 			}
 		}		
 	}
@@ -77,11 +82,14 @@ public class ToolbarSwapListener implements Listener {
 		Player player = event.getPlayer();
 		if (player.isSneaking()) {
 			if (player.hasPermission(PERMISSION_USE)) {
-				InventorySwapper.pushItemsDown(player);
-				playScrollSound(player);
+				ToolbarSwapEvent swapEvent = new ToolbarSwapEvent(player);
+				Bukkit.getPluginManager().callEvent(swapEvent);
+				if (!swapEvent.isCancelled()) {
+					InventorySwapper.pushItemsDown(player);
+					playScrollSound(player);
+				}
 			}
 		}		
 	}
-	
-	
+
 }
