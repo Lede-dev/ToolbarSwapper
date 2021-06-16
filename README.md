@@ -2,9 +2,9 @@
 
 # Author Information
 
-Author : Lede  
-Youtube : https://www.youtube.com/channel/UCgwJYHQsbW_cPWfOFXo0XXQ  
-Blog : https://lede-archive.tistory.com/  
+#### Author : Lede  
+#### Youtube : https://www.youtube.com/channel/UCgwJYHQsbW_cPWfOFXo0XXQ  
+#### Blog : https://lede-archive.tistory.com/  
 
 ***
 
@@ -64,10 +64,7 @@ Called when scrolling down the toolbar.
 
 # Support
 
-#### Buy me a coffee
-```
-https://www.buymeacoffee.com/Lede
-```
+#### Buy me a coffee : https://www.buymeacoffee.com/Lede
 
 ***
 
