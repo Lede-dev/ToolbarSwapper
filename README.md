@@ -9,12 +9,12 @@
 ***
 
 # Version
-#### Native Version (API Version)
+### Native Version (API Version)
 ```
 Spigot 1.13
 ```
 
-#### Tested Version
+### Tested Version
 ```
 Spigot/Paper : 1.17, 1.16 (> 1.13)
 ```
@@ -30,10 +30,33 @@ Press the shift key and use the mouse's scroll to change the toolbar!
 ***
 
 # Permissions
-#### toolbarswapper.use
+### toolbarswapper.use
 ```
 Toolbar Swapper 를 사용할 수 있는 권한을 지급합니다.
 Grants permission to use the Toolbar Swapper.
+```
+
+***
+
+# Commands
+### /swapper enable
+```
+Enable the player's Toolbar Swapper
+```
+
+### /swapper disable
+```
+Disable the player's Toolbar Swapper
+```
+
+### /swapper up
+```
+Scroll up the Toolbar Swapper
+```
+
+### /swapper down
+```
+Scroll down the Toolbar Swapper
 ```
 
 ***
