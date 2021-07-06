@@ -6,14 +6,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemHeldEvent;
-
 import me.lede.toolbarswapper.event.ToolbarScrollDownEvent;
 import me.lede.toolbarswapper.event.ToolbarScrollUpEvent;
 import me.lede.toolbarswapper.event.ToolbarSwapEvent;
+import me.lede.toolbarswapper.utils.Permissions;
+import me.lede.toolbarswapper.utils.SwapperState;
 
 public class ToolbarSwapListener implements Listener {
-	
-	private static final String PERMISSION_USE = "toolbarswapper.use";
 
 	public ToolbarSwapListener(ToolbarSwapper plugin) {
 		Bukkit.getPluginManager().registerEvents(this, plugin);
@@ -39,8 +38,26 @@ public class ToolbarSwapListener implements Listener {
 		return false;
 	}
 	
-	private void playScrollSound(final Player player) {
+	private static void playToolbarSwapSound(final Player player) {
 		player.playSound(player.getLocation(), Sound.ITEM_ARMOR_EQUIP_CHAIN, 1.0f, 1.0f);
+	}
+	
+	public static void scrollUp(Player player) {
+		ToolbarSwapEvent swapEvent = new ToolbarSwapEvent(player);
+		Bukkit.getPluginManager().callEvent(swapEvent);
+		if (!swapEvent.isCancelled()) {
+			InventorySwapper.pushItemsUp(player);
+			playToolbarSwapSound(player);
+		}	
+	}
+	
+	public static void scrollDown(Player player) {
+		ToolbarSwapEvent swapEvent = new ToolbarSwapEvent(player);
+		Bukkit.getPluginManager().callEvent(swapEvent);
+		if (!swapEvent.isCancelled()) {
+			InventorySwapper.pushItemsDown(player);
+			playToolbarSwapSound(player);
+		}
 	}
 	
 	@EventHandler
@@ -65,14 +82,12 @@ public class ToolbarSwapListener implements Listener {
 	@EventHandler
 	public void onScrollUp(final ToolbarScrollUpEvent event) {
 		Player player = event.getPlayer();
+		
+		if (SwapperStateLoader.getSwapperState(player) == SwapperState.DISABLE) return;
+		
 		if (player.isSneaking()) {
-			if (player.hasPermission(PERMISSION_USE)) {
-				ToolbarSwapEvent swapEvent = new ToolbarSwapEvent(player);
-				Bukkit.getPluginManager().callEvent(swapEvent);
-				if (!swapEvent.isCancelled()) {
-					InventorySwapper.pushItemsUp(player);
-					playScrollSound(player);
-				}				
+			if (player.hasPermission(Permissions.SWAPPER_USE)) {
+				scrollUp(player);
 			}
 		}		
 	}
@@ -80,16 +95,16 @@ public class ToolbarSwapListener implements Listener {
 	@EventHandler
 	public void onScrollDown(final ToolbarScrollDownEvent event) {
 		Player player = event.getPlayer();
+		
+		if (SwapperStateLoader.getSwapperState(player) == SwapperState.DISABLE) return;
+		
 		if (player.isSneaking()) {
-			if (player.hasPermission(PERMISSION_USE)) {
-				ToolbarSwapEvent swapEvent = new ToolbarSwapEvent(player);
-				Bukkit.getPluginManager().callEvent(swapEvent);
-				if (!swapEvent.isCancelled()) {
-					InventorySwapper.pushItemsDown(player);
-					playScrollSound(player);
-				}
+			if (player.hasPermission(Permissions.SWAPPER_USE)) {
+				scrollDown(player);
 			}
-		}		
+		}	
 	}
 
+
+	
 }
