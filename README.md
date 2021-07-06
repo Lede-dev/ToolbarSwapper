@@ -9,9 +9,9 @@
 ***
 
 # Version
-#### Native Version
+#### Native Version (API Version)
 ```
-Spigot 1.17
+Spigot 1.13
 ```
 
 #### Tested Version
